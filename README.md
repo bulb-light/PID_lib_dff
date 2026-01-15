@@ -1,4 +1,4 @@
-# PID Library for Arduino
+# PID Library for Arduino and ESP32
 
 ## Overview
 This library provides a discrete PID (Proportional-Integral-Derivative) controller implementation for Arduino and ESP32 boards. It is designed to be efficient, flexible, and easy to integrate into control systems. The library supports dynamic parameter reconfiguration, anti-windup mechanisms, and output clamping.
