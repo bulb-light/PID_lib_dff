@@ -13,8 +13,13 @@ This library provides a discrete PID (Proportional-Integral-Derivative) controll
 - Reset functionality to clear internal states.
 
 ## Installation
-1. Copy the `PID.h` and `PID.cpp` files into your Arduino project's `lib/PID/` directory if you are using platformio in vscode. If you are using Arduino IDE 2, copy the files to `C:\Users\user\AppData\Local\Arduino15\libraries\PID\`or to your Arduino libraries folder.
-2. Include the library in your project using `#include <PID.h>`.
+1. Copy the `PID.h` and `PID.cpp` files into your Arduino project's `lib/PID/` directory if you are using platformio in vscode. If you are using Arduino IDE 2, copy the files to `C:\Users\user\AppData\Local\Arduino15\libraries\PID_lib_dff\`or to your Arduino libraries folder.
+2. Alternatively, clone the repository directly into your libraries folder using the following command:
+
+   ```bash
+   git clone https://github.com/bulb-light/PID_lib_dff.git <path_to_libraries_folder>
+   ```
+3. Include the library in your project using `#include <PID.h>`.
 
 ## API Reference
 
