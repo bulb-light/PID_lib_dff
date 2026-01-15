@@ -52,7 +52,7 @@ Computes the PID output based on the current error.
 Resets the internal states of the PID controller.
 
 ## Example Usage
-Below is an example of using the PID library to control the temperature of a system using an Arduino Nano and an LM35 temperature sensor.
+Below is an example of using the PID library to control the temperature of a system using an Arduino Nano and an LM35 temperature sensor (check the full project on [TemperatureControlLM35](https://github.com/bulb-light/ArduinoProjects_dff/tree/main/TemperatureControlLM35)).
 
 ```cpp
 #include <Arduino.h>
