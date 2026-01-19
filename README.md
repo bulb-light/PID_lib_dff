@@ -113,3 +113,22 @@ void loop() {
 
 ## License
 This library is open-source and available under the MIT License.
+
+
+---
+
+## 📫 How to Reach Me
+
+| Platform | Handle / Link |
+|---|---|
+| Email | davidcs.ee.10@gmail.com |
+| LinkedIn | [david](https://www.linkedin.com/in/davidcsee/) |
+| Tiktok | [david_dff_bulblight](https://www.tiktok.com/@david_dff_bulblight)|
+| YouTube| [david-dff](https://www.youtube.com/@david-dff-bulblight)|
+
+---
+
+## 🔗 Connect & Collaborate
+
+I’m open to collaboration on open source, side projects, or mentoring.  
+Feel free to reach out!
