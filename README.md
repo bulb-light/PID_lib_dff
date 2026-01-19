@@ -5,6 +5,7 @@ This library provides a discrete PID (Proportional-Integral-Derivative) controll
 
 Experimental library. Minimal tested, so usage remarks and comments are welcome.
 
+### Consult the documentation for the discrete PID implementation:
 [![Discrete-time PID controller](https://img.shields.io/badge/Discrete%20Time%20PID-Go-Color?style=for-the-badge)](DiscreteTimePID.md)
 
 ## Features
