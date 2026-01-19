@@ -1,7 +1,11 @@
 # PID Library for Arduino and ESP32
 
 ## Overview
-This library provides a discrete PID (Proportional-Integral-Derivative) controller implementation for Arduino and ESP32 boards. It is designed to be efficient, flexible, and easy to integrate into control systems. The library supports dynamic parameter reconfiguration, anti-windup mechanisms, and output clamping.
+This library provides a discrete PID (Proportional-Integral-Derivative) controller [implementation](DiscreteTimePID.md) for Arduino and ESP32 boards. The library supports dynamic parameter reconfiguration, anti-windup mechanisms, and output clamping.
+
+Experimental library. Minimal tested, so usage remarks and comments are welcome.
+
+[![Discrete-time PID controller](https://img.shields.io/badge/Discrete%20Time%20PID-Go-Color?style=for-the-badge)](DiscreteTimePID.md)
 
 ## Features
 - Discrete PID controller implementation using:
