@@ -1,7 +1,7 @@
 # PID Library (Generic implementation of the algorithm in C++)
 
 ## Overview
-This library provides a discrete PID (Proportional-Integral-Derivative) controller [implementation](DiscreteTimePID.md) in C++. Compatible with Arduino and ESP32 boardas. The codebase is written in standard C++ to remain generic across different microcontrollers.
+This library provides a discrete PID (Proportional-Integral-Derivative) controller [implementation](DiscreteTimePID.md) in C++. Compatible with Arduino and ESP32 boards. The codebase is written in standard C++ to remain generic across different microcontrollers.
 
 Experimental library. Minimal tested, so usage remarks and comments are welcome.
 
