@@ -1,7 +1,7 @@
-# PID Library for Arduino and ESP32
+# PID Library (Generic implementation of the algorithm in C++)
 
 ## Overview
-This library provides a discrete PID (Proportional-Integral-Derivative) controller [implementation](DiscreteTimePID.md) for Arduino and ESP32 boards. The library supports dynamic parameter reconfiguration, anti-windup mechanisms, and output clamping.
+This library provides a discrete PID (Proportional-Integral-Derivative) controller [implementation](DiscreteTimePID.md) in C++. Compatible with Arduino and ESP32 boardas. The codebase is written in standard C++ to remain generic across different microcontrollers.
 
 Experimental library. Minimal tested, so usage remarks and comments are welcome.
 
@@ -24,7 +24,8 @@ Experimental library. Minimal tested, so usage remarks and comments are welcome.
    ```bash
    git clone https://github.com/bulb-light/PID_lib_dff.git <path_to_libraries_folder>
    ```
-3. Include the library in your project using `#include <PID.h>`.
+3. If you intend to use the library with other microcontrollers, ensure you configure it correctly for your specific environment.
+4. Include the library in your project using `#include <PID.h>`.
 
 ## API Reference
 
