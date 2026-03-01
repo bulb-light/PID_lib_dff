@@ -18,7 +18,7 @@
  * @brief Implements a discrete PID controller using trapezoidal approximation
  * for integral and backward‐difference for derivative.
  * 
- * This class provides a flexible and efficient implementation of a discrete PID controller
+ * This class provides a simple implementation of a discrete PID controller
  * for use in control systems. It supports dynamic reconfiguration of parameters,
  * anti-windup mechanisms, and output clamping.
  * 
