@@ -54,7 +54,7 @@ class PID {
         ~PID();
 
         /**
-         * @brieft Update the sampling time for the PID controller.
+         * @brief Update the sampling time for the PID controller.
          * @param sampleTimeSec Sampling time in seconds (must be > 0).
          *        If value <= 0, defaults to 0.01s.
          * 
