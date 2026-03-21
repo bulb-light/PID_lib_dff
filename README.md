@@ -1,3 +1,24 @@
+<div align="center"><p>
+    <a href="https://github.com/bulb-light/PID_lib_dff/pulse">
+      <img alt="Last commit" src="https://img.shields.io/github/last-commit/bulb-light/PID_lib_dff?style=for-the-badge&logo=starship&color=8bd5ca&logoColor=D9E0EE&labelColor=302D41"/>
+    </a>
+    <a href="https://github.com/bulb-light/PID_lib_dff/blob/master/LICENSE">
+      <img alt="License" src="https://img.shields.io/github/license/bulb-light/PID_lib_dff?style=for-the-badge&logo=starship&color=ee999f&logoColor=D9E0EE&labelColor=302D41" />
+    </a>
+    <a href="https://github.com/bulb-light/PID_lib_dff/stargazers">
+      <img alt="Stars" src="https://img.shields.io/github/stars/bulb-light/PID_lib_dff?style=for-the-badge&logo=starship&color=c69ff5&logoColor=D9E0EE&labelColor=302D41" />
+    </a>
+    <a href="https://github.com/bulb-light/PID_lib_dff/issues">
+      <img alt="Issues" src="https://img.shields.io/github/issues/bulb-light/PID_lib_dff?style=for-the-badge&logo=bilibili&color=F5E0DC&logoColor=D9E0EE&labelColor=302D41" />
+    </a>
+    <a href="https://github.com/bulb-light/PID_lib_dff">
+      <img alt="Repo Size" src="https://img.shields.io/github/repo-size/bulb-light/PID_lib_dff?color=%23DDB6F2&label=SIZE&logo=codesandbox&style=for-the-badge&logoColor=D9E0EE&labelColor=302D41" />
+    </a>
+    <a href="https://www.youtube.com/@david-dff-bulblight">
+      <img alt="follow on Youtube" src="https://img.shields.io/twitter/follow/david-dff-bulblight?style=for-the-badge&logo=youtube&color=8aadf3&logoColor=D9E0EE&labelColor=302D41" />
+    </a>
+</div>
+
 # PID Library (Generic implementation of the algorithm in C++)
 
 ## Overview
@@ -5,7 +26,7 @@ This library provides a discrete PID (Proportional-Integral-Derivative) controll
 
 Experimental library. Minimal tested, so usage remarks and comments are welcome.
 
-### Consult the documentation for the discrete PID implementation:
+### Consult the documentation for the mathematical background of the discrete PID implementation:
 [![Discrete-time PID controller](https://img.shields.io/badge/Discrete%20Time%20PID-Go-Color?style=for-the-badge)](DiscreteTimePID.md)
 
 ## Features

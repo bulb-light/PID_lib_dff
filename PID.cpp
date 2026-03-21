@@ -6,17 +6,17 @@
 PID::PID(float Kp, float Ti, float Td, float sampleTimeSec, float minOutput, float maxOutput)
     :   mKp(0.0f), mTi(0.0001f), mTd(0.0f),
         mSampleTimeSec(0.01f), mMinOutput(0.0f), mMaxOutput(255.0f), mWasSaturated(false),
-        Kpd(0.0f), Kid(0.0f), Kdd(0.0f),
-        lastError1(0.0f), lastOutput1(0.0f),
-        integralAccumulator(0.0f)
+        mKpd(0.0f), mKid(0.0f), mKdd(0.0f),
+        mLastError1(0.0f),
+        mIntegralAccumulator(0.0f)
 {
-    this->setSampleTime(sampleTimeSec);
-    this->setPIDParams(Kp, Ti, Td);
-    this->setOutputLimits(minOutput, maxOutput);
+    setSampleTime(sampleTimeSec);
+    setPIDParams(Kp, Ti, Td);
+    setOutputLimits(minOutput, maxOutput);
 
-    this->updatePIDCoefficients();
+    updatePIDCoefficients();
 
-    this->resetStates();
+    resetStates();
 }
 
 PID::~PID()
@@ -28,31 +28,31 @@ void PID::setSampleTime(float sampleTimeSec)
     // check and set new sample time, if invalid set to default 10ms
     if (sampleTimeSec <= 0.0f)
     {
-        this->mSampleTimeSec = 0.01f; // default to 10ms if invalid
+        mSampleTimeSec = 0.01f; // default to 10ms if invalid
     } else {
-        this->mSampleTimeSec = sampleTimeSec;
+        mSampleTimeSec = sampleTimeSec;
     }
 
-    this->updatePIDCoefficients();
+    updatePIDCoefficients();
 }
 
 void PID::setPIDParams(float Kp, float Ti, float Td)
 {
     // set new PID parameters
-    this->mKp = Kp;
+    mKp = Kp;
 
     // check and set Ti to avoid division by zero
     // if Ti == 0, set to small value 0.1ms
     if (Ti == 0.0f)
     {
-        this->mTi = 0.0001f; // small value to avoid division by zero 0.1ms
+        mTi = 0.0001f; // small value to avoid division by zero 0.1ms
     } else {
-        this->mTi = Ti;
+        mTi = Ti;
     }
 
-    this->mTd = Td;
+    mTd = Td;
 
-    this->updatePIDCoefficients();
+    updatePIDCoefficients();
 }
 
 void PID::setOutputLimits(float minOutput, float maxOutput)
@@ -61,22 +61,22 @@ void PID::setOutputLimits(float minOutput, float maxOutput)
     // if minOutput >= maxOutput, set to default (0.0, 255.0)
     if (minOutput >= maxOutput)
     {
-        this->mMinOutput = 0.0f;
-        this->mMaxOutput = 255.0f; // default limits
+        mMinOutput = 0.0f;
+        mMaxOutput = 255.0f; // default limits
     } else {
-        this->mMinOutput = minOutput;
-        this->mMaxOutput = maxOutput;
+        mMinOutput = minOutput;
+        mMaxOutput = maxOutput;
     }
 }
 
 void PID::updatePIDCoefficients()
 {
-    float Ts = this->mSampleTimeSec;
+    float Ts = mSampleTimeSec;
 
     // discrete PID cofficients
-    this->Kpd = this->mKp;
-    this->Kid = (this->mKp * Ts) / (2 * this->mTi);
-    this->Kdd = (this->mKp * this->mTd) / Ts;
+    mKpd = mKp;
+    mKid = (mKp * Ts) / (2 * mTi);
+    mKdd = (mKp * mTd) / Ts;
 }
 
 float PID::computePIDOut(float error)
@@ -86,37 +86,37 @@ float PID::computePIDOut(float error)
 
     // Compute PID output
     // this->integralAccumulator +=  (this->lastError1 + error);
-    float predictedAccumulator = this->integralAccumulator + (this->lastError1 + error);
+    float predictedAccumulator = mIntegralAccumulator + (mLastError1 + error);
 
-    float output = this->Kpd * error
-                 + this->Kid * predictedAccumulator
-                 + this->Kdd * (error - this->lastError1);
+    float output = mKpd * error
+                 + mKid * predictedAccumulator
+                 + mKdd * (error - mLastError1);
 
     // Anti-windup: Check for saturation (clamp output)
-    if (output > this->mMaxOutput)
+    if (output > mMaxOutput)
     {
-        output = this->mMaxOutput;
-        this->mWasSaturated = true;
+        output = mMaxOutput;
+        mWasSaturated = true;
     }
-    else if (output < this->mMinOutput)
+    else if (output < mMinOutput)
     {
-        output = this->mMinOutput;
-        this->mWasSaturated = true;
+        output = mMinOutput;
+        mWasSaturated = true;
     }
     else
     {
-        this->mWasSaturated = false;
+        mWasSaturated = false;
     }
 
     // only update integral accumulator if not saturated
-    if (!this->mWasSaturated)
+    if (!mWasSaturated)
     {
-        this->integralAccumulator = predictedAccumulator;
+        mIntegralAccumulator = predictedAccumulator;
     }
 
     // Update internal states
-    this->lastError1 = error;
-    this->lastOutput1 = output;
+    mLastError1 = error;
+    // mLastOutput1 = output;
 
     return output; // Placeholder return value
 }
@@ -124,8 +124,8 @@ float PID::computePIDOut(float error)
 void PID::resetStates()
 {
     // reset internal states
-    this->lastError1 = 0.0f;
-    this->lastOutput1 = 0.0f;
+    mLastError1 = 0.0f;
+    // mLastOutput1 = 0.0f;
 
-    // this->integralAccumulator = 0.0f;
+    // this->mIntegralAccumulator = 0.0f;
 }

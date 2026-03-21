@@ -121,17 +121,17 @@ class PID {
         bool mWasSaturated; // flag to indicate if last output was saturated
 
         // Precomputed discrete PID coeffcients
-        float Kpd, Kid, Kdd; // discrete equivalents
+        float mKpd, mKid, mKdd; // discrete equivalents
 
         // Internal state for discrete implementation
-        float lastError1;      // error at k-1
-        // float lastError2;      // error at k-2
-        float lastOutput1;      // output at k-1
-        float integralAccumulator; // integral accumulator
+        float mLastError1;      // error at k-1
+        // float mLastError2;      // error at k-2
+        // float mLastOutput1;      // output at k-1
+        float mIntegralAccumulator; // integral accumulator
 
         /** 
          * @brief Update PID coefficients based on current parameters.
-         * Kpd, Kid, Kdd are updated accordingly (discrete equivalents).
+         * mKpd, mKid, mKdd are updated accordingly (discrete equivalents).
          */
         void updatePIDCoefficients();
 };
